@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multi-select</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<select multiple="" class="users" id="select-1"></select>
+
+<script src="jquery-3.2.1.js"></script>
+
+<script src="multi-select.js"></script>
+
+<script>
+    $('.users').selectWidget({
+        'maxSelect' 	: 8,
+        'autoOpen'  	: false,
+        'autoClear' 	: false,
+        'hideSelected' 	: false,
+        'minLength' 	: 3,
+        'url'           : 'http://autocomplete.geocoder.api.here.com/6.2/suggest.json',
+        'dataQuery'  : 'query',
+        'requestData'   : {
+            'app_id'    : 'KANwiewaDDXazappMZfV',
+            'app_code'  : 'aUHzNr7xisoJCaSx0nb36w',
+        },
+        'respondVars'   : {
+            value     : 'locationId',
+            title     : 'label',
+            container : 'suggestions'
+        }
+    });
+
+    //$('#select-1').selectWidget('addSelected', {value:1, title:'admin'}).selectWidget('openList');
+</script>
+
+</body>
+</html>
