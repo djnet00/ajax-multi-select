@@ -6,6 +6,7 @@
 
 ```html
 <select multiple="" id="select-1"></select>
+```
 
 ```javascript
 $('select').selectWidget({
@@ -26,6 +27,7 @@ $('select').selectWidget({
             container : 'suggestions'
         }
     });
+```
 
 ```javascript  
 {
@@ -48,3 +50,4 @@ $('select').selectWidget({
                     container : false
                 }
             }
+```
