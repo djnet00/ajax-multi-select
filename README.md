@@ -42,13 +42,13 @@ $('select').selectWidget({
   'classPrefix'   : '',
   'dataType'      : 'json',
   'requestData'   : {
-     action: 	'action'
+        action: 	'action'
   },
   'dataQuery'     : 'q',
   'respondVars'   : {
-   value     : 'value',
-   title     : 'title',
-   container : false
+        value     : 'value',
+        title     : 'title',
+        container : false
    }
 }
 ```
