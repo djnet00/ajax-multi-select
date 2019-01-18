@@ -58,3 +58,12 @@ $('select').selectWidget({
    }
 }
 ```
+## Available methods
+```javascript 
+addSelected({
+        value: 'option_value',
+        title: 'option_title'
+});
+
+remove()
+```
