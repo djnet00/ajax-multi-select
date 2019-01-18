@@ -6,6 +6,10 @@
 
 ```html
 <select multiple="" id="select-1"></select>
+
+<script src="jquery-3.2.1.js"></script>
+
+<script src="multi-select.js"></script>
 ```
 
 ```javascript
