@@ -29,25 +29,26 @@ $('select').selectWidget({
     });
 ```
 
+## Available options
 ```javascript  
 {
   'maxSelect'     : 999,
-'url'			: 'http://localhost/',
-                'autoOpen'		: true,
-                'autoClear'		: true,
-                'hideSelected'	: false,
-                'minLength'		: 3,
-                'requestType'   : 'GET',
-                'classPrefix'   : '',
-                'dataType'      : 'json',
-                'requestData'   : {
-                    action: 	'action'
-                },
-                'dataQuery'     : 'q',
-                'respondVars'   : {
-                    value     : 'value',
-                    title     : 'title',
-                    container : false
-                }
-            }
+  'url'			: 'http://localhost/',
+  'autoOpen'		: true,
+  'autoClear'		: true,
+  'hideSelected'	: false,
+  'minLength'		: 3,
+  'requestType'   : 'GET',
+  'classPrefix'   : '',
+  'dataType'      : 'json',
+  'requestData'   : {
+     action: 	'action'
+  },
+  'dataQuery'     : 'q',
+  'respondVars'   : {
+   value     : 'value',
+   title     : 'title',
+   container : false
+   }
+}
 ```
