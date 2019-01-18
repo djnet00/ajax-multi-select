@@ -2,7 +2,7 @@
   position: relative;
   .selected-items {
     list-style: none;
-    width: 250px;
+    //width: 250px;
     padding: 3px;
     cursor: text;
     border-radius: 3px;
@@ -12,6 +12,27 @@
     background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #eeeeee 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+
+    .loading {
+      position: relative;
+      float: right;
+      height: 25px;
+      width: 26px;
+      margin-top: 4px;
+      margin-right: -32px;
+      z-index: 2;
+      background-image: url("5.gif");
+      display: none;
+    }
+
+    .open {
+      position: relative;
+      float: right;
+      padding: 8px 5px 5px 10px;
+      display: block;
+      z-index: 10;
+      cursor: pointer;
+    }
   }
 
   .focused {

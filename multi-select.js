@@ -36,6 +36,8 @@
                 var input 			= $('<input type="text">').addClass(settings.classPrefix + 'text-input');
                 var list 			= $('<ul>').addClass(settings.classPrefix + 'menu-list').hide();
                 var selectedList 	= $('<ul>').addClass(settings.classPrefix + 'selected-items');
+                var load            = $('<li>').addClass(settings.classPrefix + 'loading');
+                var openBtn            = $('<li>').addClass(settings.classPrefix + 'open').html('&#x25BC');
 
                 var maxSelect 		= select.attr('data-max-select');
                 maxSelect 			= (!maxSelect) ? settings.maxSelect : maxSelect;
@@ -61,8 +63,17 @@
 
                 selectedList.append($('<li>').append(input));
 
+                selectedList.append(openBtn);
+                selectedList.append(load);
+
                 select.after(selectedList);
                 selectedList.after(list);
+
+
+                openBtn.click(function (e) {
+                    e.stopPropagation();
+                    list.is(":visible") ? hideList() : showList();
+                });
 
 
                 /**
@@ -236,8 +247,8 @@
                 function addSelectedItem(value, title) {
                     var li = $('<li>').addClass(settings.classPrefix + 'item').attr('data-uid', value);
                     var a = $('<a>').attr('href', '#').html('&#x2715');
-                    //selectedList.prepend(li.text(title).append(a));
-                    selectedList.append(li.text(title).append(a));
+                    selectedList.prepend(li.text(title).append(a));
+                    //selectedList.append(li.text(title).append(a));
                 }
 
                 /**
@@ -315,10 +326,12 @@
                     list.css('top', selectedList.outerHeight());
                     list.css('width', selectedList.width());
                     list.show();
+                    openBtn.html('&#x25B2');
                 }
 
                 function hideList() {
                     list.hide();
+                    openBtn.html('&#x25BC');
                 }
 
                 function mergeOptions(obj1, obj2){
@@ -336,6 +349,8 @@
                     }
                     var requestData = {};
                     requestData[settings.dataQuery] = input.val();
+
+                    load.show();
 
                     $.ajax({
                         type: 		settings.requestType,
@@ -360,6 +375,7 @@
                                 }
                             });
                             listDisable();
+                            load.hide();
                             if(list.children().length > 0) {
                                 showList();
                             } else {
